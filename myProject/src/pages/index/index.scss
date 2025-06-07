@@ -1,0 +1,140 @@
+// 变量定义
+$primary-color: #07C160; // 微信绿作为主色
+$border-color: #eaeaea;
+$radius: 8px;
+$shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+// 容器布局
+.container {
+  padding: 15px;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+ 
+// 商品列表样式
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  
+  .product-item {
+    background: white;
+    border-radius: $radius;
+    padding: 10px;
+    box-shadow: $shadow;
+    
+    image {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+    
+    text {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      
+      &:last-child {
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// 订单表单样式
+.order-form {
+  background: white;
+  border-radius: $radius;
+  padding: 20px;
+  margin-top: 15px;
+  
+  image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  
+  text {
+    display: block;
+    margin: 8px 0;
+    
+    &:nth-child(3) {
+      color: $primary-color;
+      font-size: 18px;
+    }
+  }
+  
+  input {
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    padding: 10px;
+    margin: 15px 0;
+  }
+}
+
+// 按钮组
+.buttons {
+  display: flex;
+  gap: 15px; // 按钮间距
+  margin-top: 20px;
+  
+  button {
+    flex: 1;
+    padding: 12px 0;
+    border-radius: $radius;
+    font-size: 16px;
+    transition: all 0.3s;
+    
+    // 禁用状态
+    &[disabled] {
+      opacity: 0.6;
+    }
+  }
+}
+
+.cancel-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid $border-color;
+  
+  // 悬停效果
+  &:not([disabled]):hover {
+    background: #eaeaea;
+    border-color: #ddd;
+  }
+  
+  // 点击效果
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// 订单确认页
+.confirmation {
+  text-align: center;
+  padding: 30px;
+  
+  text {
+    display: block;
+    margin: 15px 0;
+    font-size: 16px;
+    
+    &:first-child {
+      color: $primary-color;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  
+  button {
+    margin-top: 30px;
+    background: $primary-color;
+    color: white;
+  }
+}
+
+// 加载状态
+.at-button--loading {
+  opacity: 0.7;
+}
